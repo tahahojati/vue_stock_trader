@@ -5,6 +5,7 @@
 </template>
 <script>
 import Stock from './Stock.vue'; 
+import StockData from '../../data/stocks.js';
 
 export default {
 	components:{
@@ -12,25 +13,13 @@ export default {
 	},
 	data(){
 		return {
-			stocks: [
-				{
-					id: 1,
-					name: "BMW",
-					price: 110,
-				},
-				{
-					id: 2,
-					name: "Google",
-					price: 10,
-				},
-				{
-					id: 3,
-					name: "Twitter",
-					price: 2,
-				},
-			],
 		};
 	},
+	computed:{
+		stocks(){
+			return this.$store.getters.stocks; 
+		}
+	}
 };
 
 </script>

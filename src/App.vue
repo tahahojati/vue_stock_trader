@@ -10,6 +10,9 @@
 <script>
 import Header from './components/Header.vue';
 export default {
+  created(){
+    this.$store.dispatch('initStocks');
+  },
   components: {
     appHeader: Header,
   }
